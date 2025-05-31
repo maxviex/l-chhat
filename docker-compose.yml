@@ -53,15 +53,6 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
-    image: node:18
-    container_name: laravel_node
-    working_dir: /var/www/html
-    volumes:
-      - ./:/var/www/html
-    command: sh -c "npm install && npm run dev"
-    ports:
-      - "5173:5173"  # kalo pake vite
-    restart: unless-stopped
 
 volumes:
   mysql_data:
