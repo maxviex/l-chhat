@@ -16,8 +16,8 @@ services:
       - DB_HOST=mysql
       - DB_PORT=3306
       - DB_DATABASE=laravel
-      - DB_USERNAME=root
-      - DB_PASSWORD=secret
+      - DB_USERNAME=l-chat
+      - DB_PASSWORD=secretbangetcoy
     depends_on:
       - mysql
 
@@ -26,8 +26,10 @@ services:
     container_name: laravel_mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secretbangetcoy
       MYSQL_DATABASE: laravel
+      MYSQL_USER: l-chat         # tambahin user baru
+      MYSQL_PASSWORD: secretbangetcoy     # password user baru
     volumes:
       - mysql_data:/var/lib/mysql
 
